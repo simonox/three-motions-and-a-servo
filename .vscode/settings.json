@@ -1,0 +1,6 @@
+{
+    "terminal.integrated.env.osx": {
+        "PATH": "/Users/simonox/.platformio/penv/bin:/Users/simonox/.platformio/penv:/Users/simonox/anaconda/bin:/Users/simonox/.rbenv/shims:./node_modules/.bin:/Users/simonox/.nvm/versions/node/v6.11.1/bin:/opt/local/bin:/opt/local/sbin:/usr/local/share/android-sdk/tools:ANDROID_HOME/platform-tools:/bin:/Users/simonox/bin:/Users/simonox/Applications/play-2.0.1:/System/Library/Frameworks/Python.framework/Versions/Current/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/MacGPG2/bin:/Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home/bin:/opt/play-2.0.1",
+        "PLATFORMIO_CALLER": "vscode"
+    }
+}
