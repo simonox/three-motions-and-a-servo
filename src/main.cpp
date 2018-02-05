@@ -36,7 +36,6 @@ void loop(){
   if (val1 == HIGH) {            // check if the input is HIGH
     myservo.write(1);
   } else {
-    digitalWrite(ledPin, LOW); // turn LED OFF
     myservo.write(90);
   }
 }
