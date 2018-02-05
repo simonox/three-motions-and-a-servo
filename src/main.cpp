@@ -1,10 +1,11 @@
 #include <Arduino.h>
 
+#include <Servo.h>
+
 /*
  * PIR sensor tester
  */
  
-int ledPin = 9;                // choose the pin for the LED
 int pir1pin = 2;               // choose the input pin (for PIR sensor)
 int pir1State = LOW;             // we start, assuming no motion detected
 int pir2pin = 3;
@@ -14,12 +15,13 @@ int pir3State = LOW;
 int val1 = 0;                    // variable for reading the pin status
 int val2 = 0;
 int val3 = 0;
+Servo myservo;
 
 void setup() {
-  pinMode(ledPin, OUTPUT);      // declare LED as output
   pinMode(pir1pin, INPUT);     // declare sensor as input
   pinMode(pir2pin, INPUT);
   pinMode(pir3pin, INPUT);
+  myservo.attach(5, 795, 2180); 
   Serial.begin(9600);
 }
  
@@ -32,20 +34,9 @@ void loop(){
   Serial.println(val3);
 
   if (val1 == HIGH) {            // check if the input is HIGH
-    digitalWrite(ledPin, HIGH);  // turn LED ON
-    if (pir1State == LOW) {
-      // we have just turned on
-      Serial.println("Motion detected!");
-      // We only want to print on the output change, not state
-      pir1State = HIGH;
-    }
+    myservo.write(1);
   } else {
     digitalWrite(ledPin, LOW); // turn LED OFF
-    if (pir1State == HIGH){
-      // we have just turned of
-      Serial.println("Motion ended!");
-      // We only want to print on the output change, not state
-      pir1State = LOW;
-    }
+    myservo.write(90);
   }
 }
