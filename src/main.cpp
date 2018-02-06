@@ -16,6 +16,11 @@ int leftValue = 0;                    // variable for reading the pin status
 int rightValue = 0;
 int centerValue = 0;
 int ledPin = 13;  
+
+int leftRotation = 359;
+int rightRotation = 2;
+int centerRotation = 90;
+
 Servo myservo;
 
 void setup() {
@@ -34,14 +39,23 @@ void loop(){
   Serial.print(leftValue);
   Serial.print(rightValue);
   Serial.println(centerValue);
-
   if (leftValue == HIGH) {            // check if,the input is HIGH
-    myservo.write(1);
-    digitalWrite(ledPin, LOW);
-
-  } else {
-    myservo.write(90);
+    Serial.println("moving left");
+    myservo.write(leftRotation);
     digitalWrite(ledPin, HIGH);
-
+    delay(500);
+  } else if (rightValue == HIGH) {
+    Serial.println("moving right");
+    myservo.write(rightRotation);
+    digitalWrite(ledPin, HIGH);
+    delay(500);
+  } else if (centerValue == HIGH) {
+    Serial.println("moving center");
+    myservo.write(centerRotation);
+    digitalWrite(ledPin, HIGH);
+    delay(500);
+  } else {
+     Serial.println("sleeeeeep");
+     digitalWrite(ledPin, LOW);
   }
 }
