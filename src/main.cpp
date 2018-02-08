@@ -55,7 +55,7 @@ void loop(){
     digitalWrite(ledPin, HIGH);
     delay(500);
   } else {
-     Serial.println("sleeeeeep");
-     digitalWrite(ledPin, LOW);
+    Serial.println("sleeeeeep");
+    digitalWrite(ledPin, LOW);
   }
 }
